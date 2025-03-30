@@ -1,0 +1,68 @@
+/* General Carousel Styles */
+.carousel-item {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Background Images */
+.slide-1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../imgs/b2.jpg");
+}
+
+.slide-2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../imgs/b5.jpg");
+}
+
+.slide-3 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../imgs/b3.jpg");
+}
+
+.carousel-content {
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.carousel-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+}
+
+.carousel-content h6 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+
+#heroSlider h6::after,
+#heroSlider::before {
+    content: "";
+    width: 20px;
+    height: 4px;
+    background-color: #ffffff;
+    display: inline-block;
+    margin: 10px;
+    vertical-align: middle;
+}
+
+/* Button */
+.btn-brand {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    background-color: #ff9800;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-brand:hover {
+    background-color: #e68900;
+}
