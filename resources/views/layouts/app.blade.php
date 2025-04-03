@@ -28,7 +28,7 @@
     <nav class="navbar navbar-expand-lg shadow py-1">
         <div class="container">
             <!-- Logo -->
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="#home">
                 <img src="{{ asset('imgs/logo 1.png') }}" alt="Logo" height="50">
             </a>
 
@@ -171,16 +171,16 @@
                     <div class="col-lg-6">
                         <div class="row g-3">
                             <div class="col-6 text-start shadow">
-                                <img class="img-fluid rounded w-100 zoomIn shadow" src="{{ asset('imgs/b7.jpg') }}" alt="">
+                                <img class="img-fluid about-pic rounded w-100 zoomIn shadow" src="{{ asset('imgs/b7.jpg') }}" alt="">
                             </div>
                             <div class="col-6 text-start">
-                                <img class="img-fluid rounded w-75 zoomIn shadow" style="margin-top: 38%" src="{{ asset('imgs/b10.jpg') }}" alt="">
+                                <img class="img-fluid about-pic rounded w-75 zoomIn shadow" style="margin-top: 38%" src="{{ asset('imgs/b10.jpg') }}" alt="">
                             </div>
                             <div class="col-6 text-end">
-                                <img class="img-fluid rounded w-75 zoomIn shadow" src="{{ asset('imgs/b8.jpg') }}" alt="">
+                                <img class="img-fluid about-pic rounded w-75 zoomIn shadow" src="{{ asset('imgs/b8.jpg') }}" alt="">
                             </div>
                             <div class="col-6 text-end">
-                                <img class="img-fluid rounded w-100 zoomIn shadow" src="{{ asset('imgs/b6.jpg') }}" alt="">
+                                <img class="img-fluid about-pic rounded w-100 zoomIn shadow" src="{{ asset('imgs/b6.jpg') }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -221,7 +221,7 @@
 
 
     <!-- Recipe Section -->
-    <section class="recipe-section py-5 bg-light" style="margin-top: 50px;">
+    <section id="recipes" class="recipe-section py-5 bg-light" style="margin-top: 50px;">
         <div class="container">
             <h2 class="text-center fw-bold text-white">Explore Delicious Recipes</h2>
             <p class="text-white text-center mb-5 pe-5 ps-5">
@@ -339,117 +339,115 @@
                     </div>
                 </div>
             </div>
+    </section>
 
 
 
+    <!-- Team Section -->
+    <section id="team" class="team-section py-5 text-white" style="margin-bottom: 50px;">
+        <div class="container">
+            <h2 class="text-center fw-bold mb=2">Meet Our Team</h2>
+            <p class="text-center px-5 mb-5">
+                Get to know the talented individuals behind our platform! Our team is dedicated to
+                curating the best recipes, sharing expert food insights, and bringing you a seamless culinary experience.
+            </p>
 
-            <!-- Team Section -->
-            <section class="team-section py-5 text-white">
-                <div class="container">
-                    <h2 class="text-center fw-bold mb-5">Meet Our Team</h2>
-
-                    <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner text-center">
-
-                            <!-- Slide 1 -->
-                            <div class="carousel-item active">
-                                <div class="row g-2">
-                                    <div class="col-md-4">
-                                        <div class="team-member">
-                                            <img src="{{ asset('imgs/t1.jpg') }}" class="team-img" alt="Jenny Mae De La Torre">
-                                            <h5 class="mt-3">Jenny Mae De La Torre</h5>
-                                            <p class="text-white">Head Chef</p>
-                                            <div class="social-icons">
-                                                <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
-                                                <a href="#" class="btn btn-outline-info btn-sm"><i class="fab fa-twitter"></i></a>
-                                                <a href="#" class="btn btn-outline-danger btn-sm"><i class="fab fa-instagram"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="team-member">
-                                            <img src="{{ asset('imgs/t2.jpg') }}" class="team-img" alt="Reyhan Cris Florida">
-                                            <h5 class="mt-3">Reyhan Cris Florida</h5>
-                                            <p class="text-white">Pastry Chef</p>
-                                            <div class="social-icons">
-                                                <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
-                                                <a href="#" class="btn btn-outline-info btn-sm"><i class="fab fa-twitter"></i></a>
-                                                <a href="#" class="btn btn-outline-danger btn-sm"><i class="fab fa-instagram"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="team-member">
-                                            <img src="{{ asset('imgs/t3.png') }}" class="team-img" alt="Emannuel Ampatin">
-                                            <h5 class="mt-3">Emannuel Ampatin</h5>
-                                            <p class="text-white">Sous Chef</p>
-                                            <div class="social-icons">
-                                                <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
-                                                <a href="#" class="btn btn-outline-info btn-sm"><i class="fab fa-twitter"></i></a>
-                                                <a href="#" class="btn btn-outline-danger btn-sm"><i class="fab fa-instagram"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Slide 2 -->
-                            <div class="carousel-item">
-                                <div class="row g-2">
-                                    <div class="col-md-4">
-                                        <div class="team-member">
-                                            <img src="{{ asset('imgs/t4.png') }}" class="team-img" alt="Christine Pearl Aboc">
-                                            <h5 class="mt-3">Christine Pearl Aboc</h5>
-                                            <p class="text-white">Food Stylist</p>
-                                            <div class="social-icons">
-                                                <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
-                                                <a href="#" class="btn btn-outline-info btn-sm"><i class="fab fa-twitter"></i></a>
-                                                <a href="#" class="btn btn-outline-danger btn-sm"><i class="fab fa-instagram"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="team-member">
-                                            <img src="{{ asset('imgs/t5.jpeg') }}" class="team-img" alt="Eisan Carlos Atamosa">
-                                            <h5 class="mt-3">Eisan Carlos Atamosa</h5>
-                                            <p class="text-white">Food Stylist</p>
-                                            <div class="social-icons">
-                                                <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
-                                                <a href="#" class="btn btn-outline-info btn-sm"><i class="fab fa-twitter"></i></a>
-                                                <a href="#" class="btn btn-outline-danger btn-sm"><i class="fab fa-instagram"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="team-member">
-                                            <img src="{{ asset('imgs/t6.jpg') }}" class="team-img" alt="Stanley James Apal">
-                                            <h5 class="mt-3">Stanley James Apal</h5>
-                                            <p class="text-white">Food Stylist</p>
-                                            <div class="social-icons">
-                                                <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
-                                                <a href="#" class="btn btn-outline-info btn-sm"><i class="fab fa-twitter"></i></a>
-                                                <a href="#" class="btn btn-outline-danger btn-sm"><i class="fab fa-instagram"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+            <div class="team-slider">
+                <div class="team-wrapper">
+                    <div class="team-member">
+                        <img src="{{ asset('imgs/t2.jpg') }}" class="team-img" alt="Reyhan Cris Florida">
+                        <h5 class="mt-3">Reyhan Cris Florida</h5>
+                        <p class="text-white">BSIT - III</p>
+                        <div class="social-icons">
+                            <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="btn btn-outline-info btn-sm"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-outline-danger btn-sm"><i class="fab fa-instagram"></i></a>
                         </div>
-
-
-                        <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </button>
+                    </div>
+                    <div class="team-member">
+                        <img src="{{ asset('imgs/t1.jpg') }}" class="team-img" alt="Jenny Mae De La Torre">
+                        <h5 class="mt-3">Jenny Mae De La Torre</h5>
+                        <p class="text-white">BSIT - III</p>
+                        <div class="social-icons">
+                            <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="btn btn-outline-info btn-sm"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-outline-danger btn-sm"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="{{ asset('imgs/t3.png') }}" class="team-img" alt="Emannuel Ampatin">
+                        <h5 class="mt-3">Emannuel Ampatin</h5>
+                        <p class="text-white">BSIT - III</p>
+                        <div class="social-icons">
+                            <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="btn btn-outline-info btn-sm"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-outline-danger btn-sm"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="{{ asset('imgs/t4.png') }}" class="team-img" alt="Christine Pearl Aboc">
+                        <h5 class="mt-3">Christine Pearl Aboc</h5>
+                        <p class="text-white">BSIT - III</p>
+                        <div class="social-icons">
+                            <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="btn btn-outline-info btn-sm"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-outline-danger btn-sm"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="{{ asset('imgs/t5.jpeg') }}" class="team-img" alt="Eisan Carlos Atamosa">
+                        <h5 class="mt-3">Eisan Carlos Atamosa</h5>
+                        <p class="text-white">BSIT - III</p>
+                        <div class="social-icons">
+                            <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="btn btn-outline-info btn-sm"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-outline-danger btn-sm"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="{{ asset('imgs/t6.jpg') }}" class="team-img" alt="Stanley James Apal">
+                        <h5 class="mt-3">Stanley James Apal</h5>
+                        <p class="text-white">BSIT - III</p>
+                        <div class="social-icons">
+                            <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="btn btn-outline-info btn-sm"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-outline-danger btn-sm"><i class="fab fa-instagram"></i></a>
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
+            <button class="prev-btn">&#10094;</button>
+            <button class="next-btn">&#10095;</button>
+        </div>
+    </section>
+
+
+    <!-- footer section -->
+    <footer class="footer text-white py-4">
+    <div class="container-fluid text-center">
+        
+        <div class="mb-3">
+            <img src="{{ asset('imgs/logo 1.png') }}" alt="Logo" width="120">
+        </div>
+
+        <p class="footer-description mb-3">
+            Discover amazing recipes, curated for every taste. Join us and explore a world of flavors!
+        </p>
+
+        <div class="mb-3">
+            <a href="#" class="btn btn-outline-light btn-sm me-3"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="btn btn-outline-light btn-sm me-3"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="btn btn-outline-light btn-sm me-3"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="btn btn-outline-light btn-sm me-3"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="btn btn-outline-light btn-sm me-3"><i class="fab fa-telegram-plane"></i></a>
+        </div>
+        <p class="mb-0">&copy; 2025 Chef's Secret. All Rights Reserved.</p>
+    </div>
+</footer>
 
 
 
+    
 
             <!-- 🔹 Main Content -->
             <!-- <div class="container mt-4 content">
@@ -457,9 +455,9 @@
     </div> -->
 
             <!-- 🔹 Footer -->
-            <footer class="footer">
+            <!-- <footer class="footer">
                 <p>&copy; 2025 Recipe Finder | Built with ❤️ using Laravel</p>
-            </footer>
+            </footer> -->
 
             <script>
                 function filterRecipes() {
@@ -478,6 +476,65 @@
                         }
                     });
                 }
+            </script>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const slider = document.querySelector(".team-wrapper");
+                    const prevBtn = document.querySelector(".prev-btn");
+                    const nextBtn = document.querySelector(".next-btn");
+
+                    let slideIndex = 0;
+                    let visibleSlides = calculateVisibleSlides();
+                    const teamMembers = document.querySelectorAll(".team-member");
+
+                    function calculateVisibleSlides() {
+                        if (window.innerWidth <= 768) return 1; // Mobile
+                        if (window.innerWidth <= 1024) return 2; // Tablet
+                        return 3; // Desktop
+                    }
+
+                    function updateSlider() {
+                        visibleSlides = calculateVisibleSlides();
+                        const translateX = -slideIndex * (100 / visibleSlides);
+                        slider.style.transition = "transform 0.5s ease-in-out";
+                        slider.style.transform = `translateX(${translateX}%)`;
+                    }
+
+                    nextBtn.addEventListener("click", () => {
+                        if (slideIndex < teamMembers.length - visibleSlides) {
+                            slideIndex++;
+                        } else {
+                            slideIndex = 0; 
+                        }
+                        updateSlider();
+                    });
+
+                    prevBtn.addEventListener("click", () => {
+                        if (slideIndex > 0) {
+                            slideIndex--;
+                        } else {
+                            slideIndex = teamMembers.length - visibleSlides; 
+                        }
+                        updateSlider();
+                    });
+
+                    // Auto-slide every 3 seconds
+                    setInterval(() => {
+                        if (slideIndex < teamMembers.length - visibleSlides) {
+                            slideIndex++;
+                        } else {
+                            slideIndex = 0; 
+                        }
+                        updateSlider();
+                    }, 3000);
+
+                    // Adjust slides on window resize
+                    window.addEventListener("resize", () => {
+                        visibleSlides = calculateVisibleSlides();
+                        updateSlider();
+                    });
+                });
             </script>
 
             <!-- Bootstrap JS -->
