@@ -17,6 +17,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
 
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <body>
@@ -113,46 +116,50 @@
 
 
     <!-- Services Section -->
-    <div id="services" class="container py-5 mb-5">
-        <div class="services text-center mb-5">
-            <h1 class="fw-bold">Our Services</h1>
-            <p class="text-muted">Explore the amazing features we offer to enhance your cooking experience.</p>
-        </div>
-        <div class="row g-4">
-            <!-- Search Recipes Card -->
-            <div class="col-md-4">
-                <div class="card service-card shadow h-100 text-center p-3">
-                    <img src="{{ asset('imgs/s0.png') }}" class="card-img-top w-50 mx-auto" alt="Search Recipes">
-                    <div class="card-body">
-                        <h5 class="card-title">Search Recipes</h5>
-                        <p class="card-text">Find recipes instantly from thousands of meals in the MealDB database.</p>
+
+    <div class="service-cont container-fluid">
+        <div id="services" class="services container">
+            <div class="service text-center mb-5">
+                <h1 class="fw-bold text-white">Our Services</h1>
+                <p class="text-white">Explore the amazing features we offer to enhance your cooking experience.</p>
+            </div>
+            <div class="row g-4">
+                <!-- Search Recipes Card -->
+                <div class="col-md-4">
+                    <div class="card service-card shadow h-100 text-center p-3">
+                        <img src="{{ asset('imgs/s8.png') }}" class="card-img-top w-50 mx-auto" alt="Search Recipes">
+                        <div class="card-body">
+                            <h5 class="card-title">Search Recipes</h5>
+                            <p class="card-text">Find recipes instantly from thousands of meals in the MealDB database.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Ingredients List Card -->
-            <div class="col-md-4">
-                <div class="card service-card shadow h-100 text-center p-3">
-                    <img src="{{ asset('imgs/s1.png') }}" class="card-img-top w-50 mx-auto" alt="Ingredients">
-                    <div class="card-body">
-                        <h5 class="card-title">View Ingredients</h5>
-                        <p class="card-text">Get detailed ingredient lists and nutritional info for each recipe.</p>
+                <!-- Ingredients List Card -->
+                <div class="col-md-4">
+                    <div class="card service-card shadow h-100 text-center p-3">
+                        <img src="{{ asset('imgs/s9.png') }}" class="card-img-top w-50 mx-auto" alt="Ingredients">
+                        <div class="card-body">
+                            <h5 class="card-title">View Ingredients</h5>
+                            <p class="card-text">Get detailed ingredient lists and nutritional info for each recipe.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Meal Categories Card -->
-            <div class="col-md-4">
-                <div class="card service-card shadow h-100 text-center p-3">
-                    <img src="{{ asset('imgs/s3.png') }}" class="card-img-top w-50 mx-auto" alt="Meal Categories">
-                    <div class="card-body">
-                        <h5 class="card-title">Meal Categories</h5>
-                        <p class="card-text">Browse recipes by category, such as vegetarian, seafood, and more.</p>
+                <!-- Meal Categories Card -->
+                <div class="col-md-4">
+                    <div class="card service-card shadow h-100 text-center p-3">
+                        <img src="{{ asset('imgs/s12.png') }}" class="card-img-top w-50 mx-auto" alt="Meal Categories">
+                        <div class="card-body">
+                            <h5 class="card-title">Meal Categories</h5>
+                            <p class="card-text">Browse recipes by category, such as vegetarian, seafood, and more.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 
 
 
@@ -163,17 +170,17 @@
                 <div class="row g-5">
                     <div class="col-lg-6">
                         <div class="row g-3">
-                            <div class="col-6 text-start">
-                                <img class="img-fluid rounded w-100 zoomIn" src="{{ asset('imgs/b7.jpg') }}" alt="">
+                            <div class="col-6 text-start shadow">
+                                <img class="img-fluid rounded w-100 zoomIn shadow" src="{{ asset('imgs/b7.jpg') }}" alt="">
                             </div>
                             <div class="col-6 text-start">
-                                <img class="img-fluid rounded w-75 zoomIn" style="margin-top: 38%" src="{{ asset('imgs/b10.jpg') }}" alt="">
+                                <img class="img-fluid rounded w-75 zoomIn shadow" style="margin-top: 38%" src="{{ asset('imgs/b10.jpg') }}" alt="">
                             </div>
                             <div class="col-6 text-end">
-                                <img class="img-fluid rounded w-75 zoomIn" src="{{ asset('imgs/b8.jpg') }}" alt="">
+                                <img class="img-fluid rounded w-75 zoomIn shadow" src="{{ asset('imgs/b8.jpg') }}" alt="">
                             </div>
                             <div class="col-6 text-end">
-                                <img class="img-fluid rounded w-100  zoomIn" src="{{ asset('imgs/b6.jpg') }}" alt="">
+                                <img class="img-fluid rounded w-100 zoomIn shadow" src="{{ asset('imgs/b6.jpg') }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -213,19 +220,268 @@
 
 
 
+    <!-- Recipe Section -->
+    <section class="recipe-section py-5 bg-light" style="margin-top: 50px;">
+        <div class="container">
+            <h2 class="text-center fw-bold text-white">Explore Delicious Recipes</h2>
+            <p class="text-white text-center mb-5 pe-5 ps-5">
+                Explore a world of flavors with our handpicked collection of mouthwatering recipes.
+                From classic favorites to new culinary inspirations, find the perfect dish to satisfy your cravings.
+                Start your cooking journey today!
+            </p>
 
-    <!-- 🔹 Main Content -->
-    <!-- <div class="container mt-4 content">
+            <!-- Search Bar & Filter -->
+            <div class="row justify-content-center mb-2">
+                <div class="col-md-8 d-flex justify-content-center align-items-center gap-2 flex-wrap">
+                    <input type="text" class="form-control w-50" placeholder="Search for a recipe...">
+                    <button class="btn btn-search">Search</button>
+
+                    <div class="btn-group">
+                        <button class="btn btn-secondary dropdown-toggle custom-dropdown-btn" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                            Filter by country
+                        </button>
+                        <ul class="dropdown-menu custom-dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Filipino</a></li>
+                            <li><a class="dropdown-item" href="#">Italian</a></li>
+                            <li><a class="dropdown-item" href="#">French</a></li>
+                            <li><a class="dropdown-item" href="#">Japanese</a></li>
+                            <li><a class="dropdown-item" href="#">Chinese</a></li>
+                            <li><a class="dropdown-item" href="#">Korean</a></li>
+                            <li><a class="dropdown-item" href="#">Spanish</a></li>
+                            <li><a class="dropdown-item" href="#">Indian</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe Cards -->
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-4 py-2">
+                        <div class="card-recipe">
+                            <img src="{{ asset('imgs/r7.jpg') }}" class="img-fluid" alt="Recipe Image">
+                            <div class="overlay">
+                                <h3>Recipe 1</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Pariatur, dolorum! Praesentium iure, accusantium saepe quo
+                                    reprehenderit error provident modi ut nobis similique iste
+                                    quaerat commodi laudantium, quibusdam nisi est consequuntur.
+                                </p>
+                                <span class="text-white "><strong>Category:</strong> Dessert</span>
+                                <span class="text-white"><strong>Area:</strong> American</span>
+                                <a href="#" class="btn btn-warning btn-sm">View Recipe</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 py-2">
+                        <div class="card-recipe">
+                            <img src="{{ asset('imgs/b8.jpg') }}" class="img-fluid" alt="Recipe Image">
+                            <div class="overlay">
+                                <h3>Recipe 2</h3>
+                                <p>Delicious creamy pasta with a rich and flavorful sauce.</p>
+                                <span class="text-white"><strong>Category:</strong> Dessert</span>
+                                <span class="text-white"><strong>Area:</strong> American</span>
+                                <a href="#" class="btn btn-warning btn-sm">View Recipe</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 py-2">
+                        <div class="card-recipe">
+                            <img src="{{ asset('imgs/b9.jpg') }}" class="img-fluid" alt="Recipe Image">
+                            <div class="overlay">
+                                <h3>Recipe 3</h3>
+                                <p>Indulge in a decadent chocolate cake with a moist texture.</p>
+                                <span class="text-white"><strong>Category:</strong> Dessert</span>
+                                <span class="text-white"><strong>Area:</strong> American</span>
+                                <a href="#" class="btn btn-warning btn-sm">View Recipe</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 py-2">
+                        <div class="card-recipe">
+                            <img src="{{ asset('imgs/b10.jpg') }}" class="img-fluid" alt="Recipe Image">
+                            <div class="overlay">
+                                <h3>Recipe 3</h3>
+                                <p>Indulge in a decadent chocolate cake with a moist texture.</p>
+                                <span class="text-white"><strong>Category:</strong> Dessert</span>
+                                <span class="text-white"><strong>Area:</strong> American</span>
+                                <a href="#" class="btn btn-warning btn-sm">View Recipe</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 py-2">
+                        <div class="card-recipe">
+                            <img src="{{ asset('imgs/r2.jpg') }}" class="img-fluid" alt="Recipe Image">
+                            <div class="overlay">
+                                <h3>Recipe 3</h3>
+                                <p>Indulge in a decadent chocolate cake with a moist texture.</p>
+                                <span class="text-white"><strong>Category:</strong> Dessert</span>
+                                <span class="text-white"><strong>Area:</strong> American</span>
+                                <a href="#" class="btn btn-warning btn-sm">View Recipe</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 py-2">
+                        <div class="card-recipe">
+                            <img src="{{ asset('imgs/r3.jpg') }}" class="img-fluid" alt="Recipe Image">
+                            <div class="overlay">
+                                <h3>Recipe 3</h3>
+                                <p>Indulge in a decadent chocolate cake with a moist texture.</p>
+                                <span class="text-white"><strong>Category:</strong> Dessert</span>
+                                <span class="text-white"><strong>Area:</strong> American</span>
+                                <a href="#" class="btn btn-warning btn-sm">View Recipe</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- Team Section -->
+            <section class="team-section py-5 text-white">
+                <div class="container">
+                    <h2 class="text-center fw-bold mb-5">Meet Our Team</h2>
+
+                    <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner text-center">
+
+                            <!-- Slide 1 -->
+                            <div class="carousel-item active">
+                                <div class="row g-2">
+                                    <div class="col-md-4">
+                                        <div class="team-member">
+                                            <img src="{{ asset('imgs/t1.jpg') }}" class="team-img" alt="Jenny Mae De La Torre">
+                                            <h5 class="mt-3">Jenny Mae De La Torre</h5>
+                                            <p class="text-white">Head Chef</p>
+                                            <div class="social-icons">
+                                                <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
+                                                <a href="#" class="btn btn-outline-info btn-sm"><i class="fab fa-twitter"></i></a>
+                                                <a href="#" class="btn btn-outline-danger btn-sm"><i class="fab fa-instagram"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="team-member">
+                                            <img src="{{ asset('imgs/t2.jpg') }}" class="team-img" alt="Reyhan Cris Florida">
+                                            <h5 class="mt-3">Reyhan Cris Florida</h5>
+                                            <p class="text-white">Pastry Chef</p>
+                                            <div class="social-icons">
+                                                <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
+                                                <a href="#" class="btn btn-outline-info btn-sm"><i class="fab fa-twitter"></i></a>
+                                                <a href="#" class="btn btn-outline-danger btn-sm"><i class="fab fa-instagram"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="team-member">
+                                            <img src="{{ asset('imgs/t3.png') }}" class="team-img" alt="Emannuel Ampatin">
+                                            <h5 class="mt-3">Emannuel Ampatin</h5>
+                                            <p class="text-white">Sous Chef</p>
+                                            <div class="social-icons">
+                                                <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
+                                                <a href="#" class="btn btn-outline-info btn-sm"><i class="fab fa-twitter"></i></a>
+                                                <a href="#" class="btn btn-outline-danger btn-sm"><i class="fab fa-instagram"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2 -->
+                            <div class="carousel-item">
+                                <div class="row g-2">
+                                    <div class="col-md-4">
+                                        <div class="team-member">
+                                            <img src="{{ asset('imgs/t4.png') }}" class="team-img" alt="Christine Pearl Aboc">
+                                            <h5 class="mt-3">Christine Pearl Aboc</h5>
+                                            <p class="text-white">Food Stylist</p>
+                                            <div class="social-icons">
+                                                <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
+                                                <a href="#" class="btn btn-outline-info btn-sm"><i class="fab fa-twitter"></i></a>
+                                                <a href="#" class="btn btn-outline-danger btn-sm"><i class="fab fa-instagram"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="team-member">
+                                            <img src="{{ asset('imgs/t5.jpeg') }}" class="team-img" alt="Eisan Carlos Atamosa">
+                                            <h5 class="mt-3">Eisan Carlos Atamosa</h5>
+                                            <p class="text-white">Food Stylist</p>
+                                            <div class="social-icons">
+                                                <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
+                                                <a href="#" class="btn btn-outline-info btn-sm"><i class="fab fa-twitter"></i></a>
+                                                <a href="#" class="btn btn-outline-danger btn-sm"><i class="fab fa-instagram"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="team-member">
+                                            <img src="{{ asset('imgs/t6.jpg') }}" class="team-img" alt="Stanley James Apal">
+                                            <h5 class="mt-3">Stanley James Apal</h5>
+                                            <p class="text-white">Food Stylist</p>
+                                            <div class="social-icons">
+                                                <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
+                                                <a href="#" class="btn btn-outline-info btn-sm"><i class="fab fa-twitter"></i></a>
+                                                <a href="#" class="btn btn-outline-danger btn-sm"><i class="fab fa-instagram"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <!-- 🔹 Main Content -->
+            <!-- <div class="container mt-4 content">
         @yield('content')
     </div> -->
 
-    <!-- 🔹 Footer -->
-    <footer class="footer">
-        <p>&copy; 2025 Recipe Finder | Built with ❤️ using Laravel</p>
-    </footer>
+            <!-- 🔹 Footer -->
+            <footer class="footer">
+                <p>&copy; 2025 Recipe Finder | Built with ❤️ using Laravel</p>
+            </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            <script>
+                function filterRecipes() {
+                    let categoryFilter = document.getElementById("categoryFilter").value;
+                    let areaFilter = document.getElementById("areaFilter").value;
+                    let cards = document.querySelectorAll(".recipe-card");
+
+                    cards.forEach(card => {
+                        let categoryMatch = (categoryFilter === "all" || card.classList.contains(categoryFilter));
+                        let areaMatch = (areaFilter === "all" || card.classList.contains(areaFilter));
+
+                        if (categoryMatch && areaMatch) {
+                            card.classList.remove("hidden");
+                        } else {
+                            card.classList.add("hidden");
+                        }
+                    });
+                }
+            </script>
+
+            <!-- Bootstrap JS -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

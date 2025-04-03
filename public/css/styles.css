@@ -1,3 +1,7 @@
+body{
+    background-color: #020f20 !important;
+}
+
 /* navbar */
 .navbar {
     color: #ffffff;
@@ -96,15 +100,19 @@
     padding-bottom: 20px;
 }
 
-.services .card{
-
+.service-cont {
+    padding-top: 50px;
+    padding-bottom: 150px;
+    background-color: #020f20  ;
 }
 
-.service-card {
+/* .service-card {
+    background-color: transparent;
+    border-color: 2px solid #ffffff;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
+} */
 .service-card:hover {
-    transition: 0.3s ease-in-out;
+    transition: 0.4s ease-in-out;
     transform: scale(1.05);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     background-color: #ff9800;
@@ -119,14 +127,15 @@
     border-bottom: 2px solid #e68900;
     margin-left: 25%;
     margin-right: 25%;
-    padding-top: 30px;
+    padding-top: 50px;
     margin-bottom: 20px;
     padding-bottom: 20px;
 }
 .about .img-fluid {
     border: 1px solid white;
 }
-.mission h3{
+.mission h3,
+.recipe-section h2 {
     border-bottom: 2px solid #e68900;
     margin-left: 25%;
     margin-right: 25%;
@@ -134,3 +143,130 @@
     margin-bottom: 20px;
     padding-bottom: 20px;
 }
+
+/* recipe section */
+.recipe-section {
+    background-color: #020f20 !important ;
+}
+
+/* search */
+.btn-search {
+    background-color: #ff9800;
+    color: #fff;
+}
+
+.btn-search:hover {
+    background-color: #e68900;
+    color: #fff;
+}
+
+/* dropdown button */
+.custom-dropdown-menu {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+.custom-dropdown-menu .dropdown-item {
+    color: #333;
+    transition: background 0.3s;
+}
+
+.custom-dropdown-menu .dropdown-item:hover {
+    background-color: #e68900;
+    color: white;
+}
+
+
+.card-recipe {
+    height: 400pxy;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    overflow: hidden
+}
+
+.card-recipe img {
+    height: 350px;
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    transition: transform 0.5s;
+    object-fit: cover;
+}
+
+.overlay {
+    height: 0;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    flex-direction: column;
+    left: 0;
+    bottom: 0;
+    border-radius: 10px;
+    background: linear-gradient(transparent, #1c1c1c);
+    padding: 0 50px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+    color: white;
+    opacity: 0;
+}
+
+.overlay h3 {
+    margin-top: 55%;
+    margin-bottom: 5px;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.overlay a {
+    margin-top: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    color: #ff9800;
+    background: #fff;
+    border-radius: 50px;
+    text-align: center;
+    padding: 5px 15px;
+}
+.overlay a:hover {
+    color: #fff;
+}
+
+.card-recipe:hover img {
+
+    transform: scale(1.2);
+}
+
+.card-recipe:hover .overlay {
+    opacity: 1;
+    height: 150%;
+}
+
+
+/* team section */
+.team-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.social-icons a {
+    margin: 5px;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+.team-member {
+    text-align: center;
+    padding: 8px;
+}
+
+
