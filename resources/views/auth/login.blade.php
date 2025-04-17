@@ -1,29 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Recipe Finder</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-CODE.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
-        /* Fullscreen background */
         body {
-            background: url('{{ asset("imgs/recipe-bg.jpg") }}') no-repeat center center/cover;
             height: 100vh;
+            margin: 0;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        .background-blur {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('{{ asset("imgs/b5.jpg") }}') no-repeat center center/cover;
+            filter: blur(3px) brightness(60%);
+            z-index: -1;
+        }
+
         .login-container {
-            background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+            background: rgba(2, 15, 32, 0.9);
+            /* Semi-transparent overlay */
             padding: 30px;
             border-radius: 10px;
             color: white;
             text-align: center;
             width: 100%;
             max-width: 400px;
+            z-index: 1;
         }
 
         .form-control {
@@ -62,24 +78,30 @@
         }
     </style>
 </head>
-<body>
 
+<body>
+    <div class="background-blur"></div>
     <div class="login-container">
         <h2 class="fw-bold">Recipe Finder</h2>
         <p class="mb-4">Find, Cook & Enjoy Delicious Recipes!</p>
 
-        <form>
+
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
             <div class="mb-3">
-                <input type="email" class="form-control" placeholder="Email" required>
+                <input type="email" name="email" class="form-control" placeholder="Email" required>
             </div>
             <div class="mb-3">
-                <input type="password" class="form-control" placeholder="Password" required>
+                <input type="password" name="password" class="form-control" placeholder="Password" required>
             </div>
             <button type="submit" class="btn btn-login w-100">Login</button>
         </form>
 
+
+        <span>Don't have an account? <a href="{{ route('register') }}" style="color: #e68900;">Register here</a></span>
+
         <p class="mt-3">
-            <a href="#" class="text-white">Forgot Password?</a>
+            <a href="#" class="text-white" style="text-decoration: none;">Forgot Password?</a>
         </p>
 
         <div class="social-icons mt-3">
@@ -88,6 +110,6 @@
             <a href="#"><i class="fab fa-google"></i></a>
         </div>
     </div>
-
 </body>
+
 </html>

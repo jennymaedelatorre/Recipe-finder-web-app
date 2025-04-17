@@ -2,40 +2,47 @@
 
 namespace App\Http\Controllers;
 
-
-use App\Models\Recipe;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class RecipeController extends Controller
 {
+
     public function index(Request $request)
     {
-        $query = Recipe::query();
+        $search = $request->input('search');
+        $country = $request->input('area');
 
-        if ($request->has('search')) {
-            $query->where('name', 'LIKE', '%' . $request->search . '%');
+        
+        $url = 'https://www.themealdb.com/api/json/v1/1/search.php?s=' . ($search ?? '');
+
+        if ($country) {
+            $url = 'https://www.themealdb.com/api/json/v1/1/filter.php?a=' . $country;
         }
 
-        $recipes = $query->get();
-        return view('recipes.index', compact('recipes'));
+        $response = Http::get($url);
+
+        $meals = $response->json()['meals'] ?? [];
+
+        $meals = collect($meals); 
+
+        return view('recipes.index', compact('meals', 'search', 'country'));
     }
 
     public function show($id)
     {
-        $recipe = Recipe::findOrFail($id);
-        return view('recipes.show', compact('recipe'));
-    }
+        // Fetch recipe data from external API 
+        $response = Http::get("https://www.themealdb.com/api/json/v1/1/lookup.php?i={$id}");
 
-    public function store(Request $request)
-    {
-        $request->validate([
-            'name' => 'required',
-            'ingredients' => 'required',
-            'instructions' => 'required',
-        ]);
+        // Check if the response has the 'meals' data
+        $meal = $response->json()['meals'][0] ?? null;
 
-        Recipe::create($request->all());
+        // If no meal found, throw a 404 error
+        if (!$meal) {
+            abort(404);
+        }
 
-        return redirect('/')->with('success', 'Recipe Added!');
+        // Pass the meal data to the show view
+        return view('recipes.show', compact('meal'));
     }
 }

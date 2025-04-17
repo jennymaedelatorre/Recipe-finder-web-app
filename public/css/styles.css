@@ -8,7 +8,7 @@ body{
     background: rgba(0, 0, 0, 0.3) !important; 
     backdrop-filter: blur(5px); 
     transition: background 0.3s ease-in-out;
-    position: absolute; 
+    /* position: absolute;  */
     width: 100%; 
     z-index: 1000; 
 }
@@ -21,15 +21,43 @@ body{
     transform: rotate(360deg);
 }
 
+.navbar .navbar-nav .nav-link.active {
+    border-bottom: 2px solid #e68900; 
+    color: #e68900; 
+}
+
 
 .navbar .navbar-nav .nav-link,
 .navbar .navbar-brand {
-    color: white !important;
+    color: white ;
 }
 
 .navbar .navbar-nav .nav-link:hover {
     color: #ff9800 !important; 
 }
+
+.dropdown .nav-link i {
+    padding-left: 10px;
+    font-size: 1.6rem;
+}
+
+.dropdown .dropdown-menu {
+    color: black;
+    padding: 30px;
+    width: 300px;
+    height: 200px;
+    /* background-color: #ff9800; */
+}
+
+#userEmail {
+    color: rgb(27, 122, 146);
+}
+
+.dropdown .dropdown-menu .logout:hover {
+   font-weight: bolder;
+   font-size: 1.08rem;
+}
+
 .btn-navbar {
     color: #ff9800;
     font-weight: bolder;
@@ -67,9 +95,10 @@ body{
 }
 
 .carousel-content h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 4rem;
-    font-weight: 700;
-    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    /* font-family: 'Poppins', sans-serif; */
 }
 
 .carousel-content h6 {
@@ -114,15 +143,10 @@ body{
     padding-bottom: 150px;
     background-color: #020f20  ;
 }
-
-/* .service-card {
-    background-color: transparent;
-    border-color: 2px solid #ffffff;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-} */
 .card-title {
     color: #ff9800;
 }
+
 .service-card:hover {
     transition: 0.4s ease-in-out;
     transform: scale(1.05);
@@ -239,8 +263,9 @@ body{
 .overlay h3 {
     margin-top: 55%;
     margin-bottom: 5px;
-    font-size: 30px;
-    font-weight: 500;
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
     letter-spacing: 2px;
 }
 
@@ -312,20 +337,7 @@ body{
    display: none;
 }
 
-/* .prev-btn, .next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.3);
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 24px;
-    z-index: 10;
-}
 
-.prev-btn { left: 10px; }
-.next-btn { right: 10px; } */
 
 /* Mobile*/
 @media (max-width: 768px) {
