@@ -1,0 +1,36 @@
+body {
+    background-color: #020f20;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+}
+
+.details h2 {
+    border-bottom: 2px solid #e68900;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-top: 30px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+.card-recipe {
+    justify-content: center !important;
+    text-align: center;
+    width: 700px;
+    height: 400px;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    overflow: hidden
+}
+
+.card-recipe img {
+    height: 400px;
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.5s;
+    object-fit: cover;
+}
+
+.card-recipe:hover img {
+    transform: scale(1.2);
+}

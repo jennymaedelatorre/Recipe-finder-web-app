@@ -25,9 +25,8 @@
 <body>
 
     <!-- 🔹 Navbar -->
-    <nav class="navbar navbar-expand-lg shadow py-1">
+    <nav class="navbar navbar-expand-lg shadow py-1 fixed-top">
         <div class="container">
-            <!-- Logo -->
             <a class="navbar-brand" href="#home">
                 <img src="{{ asset('imgs/logo 1.png') }}" alt="Logo" height="50">
             </a>
@@ -38,35 +37,54 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Navbar Links -->
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item fw-bold">
                         <a class="nav-link active" aria-current="page" href="#home">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item fw-bold">
                         <a class="nav-link" href="#services">Services</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item fw-bold">
                         <a class="nav-link" href="#about">About</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item fw-bold">
                         <a class="nav-link" href="#recipes">Recipes</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item fw-bold">
                         <a class="nav-link" href="#team">Team</a>
                     </li>
+
+                    <!-- User Account Icon and Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-circle"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown" id="accountDropdownMenu">
+                            <p id="userId">ID: {{ Auth::user()->id }}</p>
+                            <p id="userName">Name: {{ Auth::user()->name }}</p>
+                            <p id="userEmail">Email: {{ Auth::user()->email }}</p>
+
+                            <a style="color:rgb(189, 63, 63); text-decoration:none" class="logout fw-bold" href="{{ route('logout') }}" id="logoutLink" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa-solid fa-right-from-bracket"></i>
+                                Logout
+                            </a>
+                            <!-- Hidden logout form -->
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+
+                        </ul>
+                    </li>
+
                 </ul>
-
-
-                <a href="/login" class="btn btn-navbar">Login</a>
             </div>
         </div>
     </nav>
 
 
+
     <!-- Home/Carousel -->
-    <div id="home" class="home">
+    <section id="home" class="home">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <!-- Indicators -->
             <div class="carousel-indicators">
@@ -81,7 +99,7 @@
                     <div class="carousel-content">
                         <h6>-- Welcome to Chef's Secret --</h6>
                         <h1>Delicious Recipes Just <br> for You</h1>
-                        <a href="#" class="btn btn-brand">Explore Recipes</a>
+                        <a href="#recipes" class="btn btn-brand">Explore Recipes</a>
                     </div>
                 </div>
 
@@ -89,15 +107,15 @@
                     <div class="carousel-content">
                         <h6>-- Welcome to Chef's Secret --</h6>
                         <h1>Cook Like a Pro</h1>
-                        <a href="#" class="btn btn-brand">Get Started</a>
+                        <a href="#recipes" class="btn btn-brand">Get Started</a>
                     </div>
                 </div>
 
                 <div class="carousel-item slide-bg slide-3">
                     <div class="carousel-content">
                         <h6>-- Welcome to Chef's Secret --</h6>
-                        <h1>Discover New <br> Flavors</h1>
-                        <a href="#" class="btn btn-brand">Try Now</a>
+                        <h1>Discover New Flavors</h1>
+                        <a href="#recipes" class="btn btn-brand">Try Now</a>
                     </div>
                 </div>
             </div>
@@ -112,13 +130,12 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-    </div>
+    </section>
 
 
     <!-- Services Section -->
-
-    <div class="service-cont container-fluid">
-        <div id="services" class="services container">
+    <section class="service-cont container-fluid" id="services">
+        <div class="services container">
             <div class="service text-center mb-5">
                 <h1 class="fw-bold text-white">Our Services</h1>
                 <p class="text-white">Explore the amazing features we offer to enhance your cooking experience.</p>
@@ -129,7 +146,7 @@
                     <div class="card service-card shadow h-100 text-center p-3">
                         <img src="{{ asset('imgs/s8.png') }}" class="card-img-top w-50 mx-auto" alt="Search Recipes">
                         <div class="card-body">
-                            <h5 class="card-title">Search Recipes</h5>
+                            <h5 class="card-title fw-bold">Search Recipes</h5>
                             <p class="card-text">Find recipes instantly from thousands of meals in the MealDB database.</p>
                         </div>
                     </div>
@@ -140,7 +157,7 @@
                     <div class="card service-card shadow h-100 text-center p-3">
                         <img src="{{ asset('imgs/s9.png') }}" class="card-img-top w-50 mx-auto" alt="Ingredients">
                         <div class="card-body">
-                            <h5 class="card-title">View Ingredients</h5>
+                            <h5 class="card-title fw-bold">View Ingredients</h5>
                             <p class="card-text">Get detailed ingredient lists and nutritional info for each recipe.</p>
                         </div>
                     </div>
@@ -151,20 +168,20 @@
                     <div class="card service-card shadow h-100 text-center p-3">
                         <img src="{{ asset('imgs/s12.png') }}" class="card-img-top w-50 mx-auto" alt="Meal Categories">
                         <div class="card-body">
-                            <h5 class="card-title">Meal Categories</h5>
+                            <h5 class="card-title fw-bold">Meal Categories</h5>
                             <p class="card-text">Browse recipes by category, such as vegetarian, seafood, and more.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
 
 
 
     <!-- about Section -->
-    <div id="about" class="about text-white">
+    <section id="about" class="about text-white">
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="row g-5">
@@ -216,131 +233,14 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
 
 
     <!-- Recipe Section -->
-    <section id="recipes" class="recipe-section py-5 bg-light" style="margin-top: 50px;">
-        <div class="container">
-            <h2 class="text-center fw-bold text-white">Explore Delicious Recipes</h2>
-            <p class="text-white text-center mb-5 pe-5 ps-5">
-                Explore a world of flavors with our handpicked collection of mouthwatering recipes.
-                From classic favorites to new culinary inspirations, find the perfect dish to satisfy your cravings.
-                Start your cooking journey today!
-            </p>
-
-            <!-- Search Bar & Filter -->
-            <div class="row justify-content-center mb-2">
-                <div class="col-md-8 d-flex justify-content-center align-items-center gap-2 flex-wrap">
-                    <input type="text" class="form-control w-50" placeholder="Search for a recipe...">
-                    <button class="btn btn-search">Search</button>
-
-                    <div class="btn-group">
-                        <button class="btn btn-secondary dropdown-toggle custom-dropdown-btn" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                            Filter by country
-                        </button>
-                        <ul class="dropdown-menu custom-dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Filipino</a></li>
-                            <li><a class="dropdown-item" href="#">Italian</a></li>
-                            <li><a class="dropdown-item" href="#">French</a></li>
-                            <li><a class="dropdown-item" href="#">Japanese</a></li>
-                            <li><a class="dropdown-item" href="#">Chinese</a></li>
-                            <li><a class="dropdown-item" href="#">Korean</a></li>
-                            <li><a class="dropdown-item" href="#">Spanish</a></li>
-                            <li><a class="dropdown-item" href="#">Indian</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Recipe Cards -->
-            <div class="container py-5">
-                <div class="row justify-content-center">
-                    <div class="col-md-4 py-2">
-                        <div class="card-recipe">
-                            <img src="{{ asset('imgs/r7.jpg') }}" class="img-fluid" alt="Recipe Image">
-                            <div class="overlay">
-                                <h3>Recipe 1</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Pariatur, dolorum! Praesentium iure, accusantium saepe quo
-                                    reprehenderit error provident modi ut nobis similique iste
-                                    quaerat commodi laudantium, quibusdam nisi est consequuntur.
-                                </p>
-                                <span class="text-white "><strong>Category:</strong> Dessert</span>
-                                <span class="text-white"><strong>Area:</strong> American</span>
-                                <a href="#" class="btn btn-warning btn-sm">View Recipe</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 py-2">
-                        <div class="card-recipe">
-                            <img src="{{ asset('imgs/b8.jpg') }}" class="img-fluid" alt="Recipe Image">
-                            <div class="overlay">
-                                <h3>Recipe 2</h3>
-                                <p>Delicious creamy pasta with a rich and flavorful sauce.</p>
-                                <span class="text-white"><strong>Category:</strong> Dessert</span>
-                                <span class="text-white"><strong>Area:</strong> American</span>
-                                <a href="#" class="btn btn-warning btn-sm">View Recipe</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 py-2">
-                        <div class="card-recipe">
-                            <img src="{{ asset('imgs/b9.jpg') }}" class="img-fluid" alt="Recipe Image">
-                            <div class="overlay">
-                                <h3>Recipe 3</h3>
-                                <p>Indulge in a decadent chocolate cake with a moist texture.</p>
-                                <span class="text-white"><strong>Category:</strong> Dessert</span>
-                                <span class="text-white"><strong>Area:</strong> American</span>
-                                <a href="#" class="btn btn-warning btn-sm">View Recipe</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 py-2">
-                        <div class="card-recipe">
-                            <img src="{{ asset('imgs/b10.jpg') }}" class="img-fluid" alt="Recipe Image">
-                            <div class="overlay">
-                                <h3>Recipe 3</h3>
-                                <p>Indulge in a decadent chocolate cake with a moist texture.</p>
-                                <span class="text-white"><strong>Category:</strong> Dessert</span>
-                                <span class="text-white"><strong>Area:</strong> American</span>
-                                <a href="#" class="btn btn-warning btn-sm">View Recipe</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 py-2">
-                        <div class="card-recipe">
-                            <img src="{{ asset('imgs/r2.jpg') }}" class="img-fluid" alt="Recipe Image">
-                            <div class="overlay">
-                                <h3>Recipe 3</h3>
-                                <p>Indulge in a decadent chocolate cake with a moist texture.</p>
-                                <span class="text-white"><strong>Category:</strong> Dessert</span>
-                                <span class="text-white"><strong>Area:</strong> American</span>
-                                <a href="#" class="btn btn-warning btn-sm">View Recipe</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 py-2">
-                        <div class="card-recipe">
-                            <img src="{{ asset('imgs/r3.jpg') }}" class="img-fluid" alt="Recipe Image">
-                            <div class="overlay">
-                                <h3>Recipe 3</h3>
-                                <p>Indulge in a decadent chocolate cake with a moist texture.</p>
-                                <span class="text-white"><strong>Category:</strong> Dessert</span>
-                                <span class="text-white"><strong>Area:</strong> American</span>
-                                <a href="#" class="btn btn-warning btn-sm">View Recipe</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
-
+    <div class="container mt-4 content">
+        @yield('content')
+    </div>
 
 
     <!-- Team Section -->
@@ -424,121 +324,154 @@
 
     <!-- footer section -->
     <footer class="footer text-white py-4">
-    <div class="container-fluid text-center">
-        
-        <div class="mb-3">
-            <img src="{{ asset('imgs/logo 1.png') }}" alt="Logo" width="120">
-        </div>
+        <div class="container-fluid text-center">
 
-        <p class="footer-description mb-3">
-            Discover amazing recipes, curated for every taste. Join us and explore a world of flavors!
-        </p>
+            <div class="mb-3">
+                <img src="{{ asset('imgs/logo 1.png') }}" alt="Logo" width="120">
+            </div>
 
-        <div class="mb-3">
-            <a href="#" class="btn btn-outline-light btn-sm me-3"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="btn btn-outline-light btn-sm me-3"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="btn btn-outline-light btn-sm me-3"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="btn btn-outline-light btn-sm me-3"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="btn btn-outline-light btn-sm me-3"><i class="fab fa-telegram-plane"></i></a>
+            <p class="footer-description mb-3">
+                Discover amazing recipes, curated for every taste. Join us and explore a world of flavors!
+            </p>
+
+            <div class="mb-3">
+                <a href="#" class="btn btn-outline-light btn-sm me-3"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="btn btn-outline-light btn-sm me-3"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="btn btn-outline-light btn-sm me-3"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="btn btn-outline-light btn-sm me-3"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="btn btn-outline-light btn-sm me-3"><i class="fab fa-telegram-plane"></i></a>
+            </div>
+            <p class="mb-0">&copy; 2025 Chef's Secret. All Rights Reserved.</p>
         </div>
-        <p class="mb-0">&copy; 2025 Chef's Secret. All Rights Reserved.</p>
-    </div>
-</footer>
+    </footer>
+
+
 
 
 
     
-
-            <!-- 🔹 Main Content -->
-            <!-- <div class="container mt-4 content">
-        @yield('content')
-    </div> -->
-
-            <!-- 🔹 Footer -->
-            <!-- <footer class="footer">
+    <!-- 🔹 Footer -->
+    <!-- <footer class="footer">
                 <p>&copy; 2025 Recipe Finder | Built with ❤️ using Laravel</p>
             </footer> -->
 
-            <script>
-                function filterRecipes() {
-                    let categoryFilter = document.getElementById("categoryFilter").value;
-                    let areaFilter = document.getElementById("areaFilter").value;
-                    let cards = document.querySelectorAll(".recipe-card");
+    @yield('scripts')
 
-                    cards.forEach(card => {
-                        let categoryMatch = (categoryFilter === "all" || card.classList.contains(categoryFilter));
-                        let areaMatch = (areaFilter === "all" || card.classList.contains(areaFilter));
 
-                        if (categoryMatch && areaMatch) {
-                            card.classList.remove("hidden");
-                        } else {
-                            card.classList.add("hidden");
-                        }
-                    });
-                }
-            </script>
+    <!-- for active navbar -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const links = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
 
-            <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    const slider = document.querySelector(".team-wrapper");
-                    const prevBtn = document.querySelector(".prev-btn");
-                    const nextBtn = document.querySelector(".next-btn");
+            // Add a listener for the scroll event
+            window.addEventListener('scroll', function() {
+                let currentSection = "";
 
-                    let slideIndex = 0;
-                    let visibleSlides = calculateVisibleSlides();
-                    const teamMembers = document.querySelectorAll(".team-member");
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
 
-                    function calculateVisibleSlides() {
-                        if (window.innerWidth <= 768) return 1; // Mobile
-                        if (window.innerWidth <= 1024) return 2; // Tablet
-                        return 3; // Desktop
+
+                    if (pageYOffset >= sectionTop - sectionHeight / 3 && pageYOffset < sectionTop + sectionHeight) {
+                        currentSection = section.getAttribute('id');
                     }
-
-                    function updateSlider() {
-                        visibleSlides = calculateVisibleSlides();
-                        const translateX = -slideIndex * (100 / visibleSlides);
-                        slider.style.transition = "transform 0.5s ease-in-out";
-                        slider.style.transform = `translateX(${translateX}%)`;
-                    }
-
-                    nextBtn.addEventListener("click", () => {
-                        if (slideIndex < teamMembers.length - visibleSlides) {
-                            slideIndex++;
-                        } else {
-                            slideIndex = 0; 
-                        }
-                        updateSlider();
-                    });
-
-                    prevBtn.addEventListener("click", () => {
-                        if (slideIndex > 0) {
-                            slideIndex--;
-                        } else {
-                            slideIndex = teamMembers.length - visibleSlides; 
-                        }
-                        updateSlider();
-                    });
-
-                    // Auto-slide every 3 seconds
-                    setInterval(() => {
-                        if (slideIndex < teamMembers.length - visibleSlides) {
-                            slideIndex++;
-                        } else {
-                            slideIndex = 0; 
-                        }
-                        updateSlider();
-                    }, 3000);
-
-                    // Adjust slides on window resize
-                    window.addEventListener("resize", () => {
-                        visibleSlides = calculateVisibleSlides();
-                        updateSlider();
-                    });
                 });
-            </script>
 
-            <!-- Bootstrap JS -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                // Remove 'active' class from all links and add it to the current section's link
+                links.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === currentSection) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+
+
+    <!-- for filter -->
+    <script>
+        function filterRecipes() {
+            let categoryFilter = document.getElementById("categoryFilter").value;
+            let areaFilter = document.getElementById("areaFilter").value;
+            let cards = document.querySelectorAll(".recipe-card");
+
+            cards.forEach(card => {
+                let categoryMatch = (categoryFilter === "all" || card.classList.contains(categoryFilter));
+                let areaMatch = (areaFilter === "all" || card.classList.contains(areaFilter));
+
+                if (categoryMatch && areaMatch) {
+                    card.classList.remove("hidden");
+                } else {
+                    card.classList.add("hidden");
+                }
+            });
+        }
+    </script>
+
+    <!-- for team carousel -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const slider = document.querySelector(".team-wrapper");
+            const prevBtn = document.querySelector(".prev-btn");
+            const nextBtn = document.querySelector(".next-btn");
+
+            let slideIndex = 0;
+            let visibleSlides = calculateVisibleSlides();
+            const teamMembers = document.querySelectorAll(".team-member");
+
+            function calculateVisibleSlides() {
+                if (window.innerWidth <= 768) return 1; // Mobile
+                if (window.innerWidth <= 1024) return 2; // Tablet
+                return 3; // Desktop
+            }
+
+            function updateSlider() {
+                visibleSlides = calculateVisibleSlides();
+                const translateX = -slideIndex * (100 / visibleSlides);
+                slider.style.transition = "transform 0.5s ease-in-out";
+                slider.style.transform = `translateX(${translateX}%)`;
+            }
+
+            nextBtn.addEventListener("click", () => {
+                if (slideIndex < teamMembers.length - visibleSlides) {
+                    slideIndex++;
+                } else {
+                    slideIndex = 0;
+                }
+                updateSlider();
+            });
+
+            prevBtn.addEventListener("click", () => {
+                if (slideIndex > 0) {
+                    slideIndex--;
+                } else {
+                    slideIndex = teamMembers.length - visibleSlides;
+                }
+                updateSlider();
+            });
+
+            // Auto-slide every 3 seconds
+            setInterval(() => {
+                if (slideIndex < teamMembers.length - visibleSlides) {
+                    slideIndex++;
+                } else {
+                    slideIndex = 0;
+                }
+                updateSlider();
+            }, 3000);
+
+            // Adjust slides on window resize
+            window.addEventListener("resize", () => {
+                visibleSlides = calculateVisibleSlides();
+                updateSlider();
+            });
+        });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

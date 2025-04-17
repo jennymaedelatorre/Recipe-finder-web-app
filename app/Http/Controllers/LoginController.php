@@ -6,11 +6,9 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
-    // This will handle the login attempt
     public function processLogin(Request $request)
     {
-        // assume a hardcoded email and password.
-        
+        // sample email & pass
         $validEmail = 'user@example.com';
         $validPassword = 'password123'; 
 
