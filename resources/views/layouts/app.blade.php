@@ -259,7 +259,7 @@
                         <h5 class="mt-3">Reyhan Cris Florida</h5>
                         <p class="text-white">BSIT - III</p>
                         <div class="social-icons">
-                            <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.facebook.com/reyhancrisflorida" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
                             <a href="#" class="btn btn-outline-info btn-sm"><i class="fab fa-twitter"></i></a>
                             <a href="#" class="btn btn-outline-danger btn-sm"><i class="fab fa-instagram"></i></a>
                         </div>
@@ -269,7 +269,7 @@
                         <h5 class="mt-3">Jenny Mae De La Torre</h5>
                         <p class="text-white">BSIT - III</p>
                         <div class="social-icons">
-                            <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.facebook.com/jennymae.quarteros" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
                             <a href="#" class="btn btn-outline-info btn-sm"><i class="fab fa-twitter"></i></a>
                             <a href="#" class="btn btn-outline-danger btn-sm"><i class="fab fa-instagram"></i></a>
                         </div>
@@ -279,7 +279,7 @@
                         <h5 class="mt-3">Emannuel Ampatin</h5>
                         <p class="text-white">BSIT - III</p>
                         <div class="social-icons">
-                            <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.facebook.com/emmanuel.ampatin.2024" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
                             <a href="#" class="btn btn-outline-info btn-sm"><i class="fab fa-twitter"></i></a>
                             <a href="#" class="btn btn-outline-danger btn-sm"><i class="fab fa-instagram"></i></a>
                         </div>
@@ -289,7 +289,7 @@
                         <h5 class="mt-3">Christine Pearl Aboc</h5>
                         <p class="text-white">BSIT - III</p>
                         <div class="social-icons">
-                            <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.facebook.com/christinepearl.aboc.5" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
                             <a href="#" class="btn btn-outline-info btn-sm"><i class="fab fa-twitter"></i></a>
                             <a href="#" class="btn btn-outline-danger btn-sm"><i class="fab fa-instagram"></i></a>
                         </div>
@@ -299,7 +299,7 @@
                         <h5 class="mt-3">Eisan Carlos Atamosa</h5>
                         <p class="text-white">BSIT - III</p>
                         <div class="social-icons">
-                            <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.facebook.com/eisancarlos12" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
                             <a href="#" class="btn btn-outline-info btn-sm"><i class="fab fa-twitter"></i></a>
                             <a href="#" class="btn btn-outline-danger btn-sm"><i class="fab fa-instagram"></i></a>
                         </div>
@@ -309,7 +309,7 @@
                         <h5 class="mt-3">Stanley James Apal</h5>
                         <p class="text-white">BSIT - III</p>
                         <div class="social-icons">
-                            <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100032255230798" class="btn btn-outline-primary btn-sm"><i class="fab fa-facebook"></i></a>
                             <a href="#" class="btn btn-outline-info btn-sm"><i class="fab fa-twitter"></i></a>
                             <a href="#" class="btn btn-outline-danger btn-sm"><i class="fab fa-instagram"></i></a>
                         </div>
@@ -348,12 +348,6 @@
 
 
 
-
-    
-    <!-- 🔹 Footer -->
-    <!-- <footer class="footer">
-                <p>&copy; 2025 Recipe Finder | Built with ❤️ using Laravel</p>
-            </footer> -->
 
     @yield('scripts')
 

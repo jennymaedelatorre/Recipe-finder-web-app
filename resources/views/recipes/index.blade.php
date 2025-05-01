@@ -17,15 +17,15 @@
                     <input type="text" name="search" class="form-control w-50" placeholder="Search for a recipe..." value="{{ request('search') }}">
                     <button type="submit" class="btn btn-search">Search</button>
 
-                    <select name="area" onchange="this.form.submit()" class="form-select w-auto">
+                    <select name="area" class="form-select w-auto">
                         <option value="">All Countries</option>
                         <option value="Filipino" {{ request('area') == 'Filipino' ? 'selected' : '' }}>Filipino</option>
                         <option value="Italian" {{ request('area') == 'Italian' ? 'selected' : '' }}>Italian</option>
                         <option value="French" {{ request('area') == 'French' ? 'selected' : '' }}>French</option>
                         <option value="Japanese" {{ request('area') == 'Japanese' ? 'selected' : '' }}>Japanese</option>
                         <option value="Chinese" {{ request('area') == 'Chinese' ? 'selected' : '' }}>Chinese</option>
-                        <option value="Korean" {{ request('area') == 'Korean' ? 'selected' : '' }}>Korean</option>
-                        <option value="Spanish" {{ request('area') == 'Spanish' ? 'selected' : '' }}>Spanish</option>
+                        <option value="Mexican" {{ request('area') == 'Mexican' ? 'selected' : '' }}>Mexican</option>
+                        <option value="Canadian" {{ request('area') == 'Canadian' ? 'selected' : '' }}>Canadian</option>
                         <option value="Indian" {{ request('area') == 'Indian' ? 'selected' : '' }}>Indian</option>
                     </select>
                 </form>
@@ -33,46 +33,24 @@
         </div>
 
         <!-- Recipe Cards -->
-        <div class="row justify-content-center" id="recipe-cards">
-            <!-- first 9 recipes  -->
-            @foreach ($meals->take(9) as $meal)
-                <div class="col-md-4 py-2" class="recipe-card">
-                    <div class="card-recipe">
-                        <img src="{{ $meal['strMealThumb'] }}" class="img-fluid" alt="{{ $meal['strMeal'] }}">
-                        <div class="overlay">
-                            <h3>{{ $meal['strMeal'] }}</h3>
-                            <span class="fw-bold">Click below to see Instructions</span>
-                            <span class="text-white"><strong>Category:</strong> {{ $meal['strCategory'] }}</span>
-                            <span class="text-white"><strong>Area:</strong> {{ $meal['strArea'] }}</span>
-                            <a href="{{ route('recipes.show', $meal['idMeal']) }}" class="btn btn-warning btn-sm">View Recipe</a>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
+
+        <div id="loader" style="display: none; padding-bottom:150px " class="text-center my-5">
+            <div class="spinner-border text-warning" role="status" style="width: 3rem; height: 3rem;">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-3 text-white">Fetching delicious recipes... it may take a few moments. 🍽️</p>
         </div>
 
-         <!-- Additional Recipe Cards (Hidden initially) -->
-         <div class="row justify-content-center" id="extra-recipes" style="display: none;">
-            @foreach ($meals->skip(9)->take(6) as $meal)
-                <div class="col-md-4 py-2" class="recipe-card">
-                    <div class="card-recipe">
-                        <img src="{{ $meal['strMealThumb'] }}" class="img-fluid" alt="{{ $meal['strMeal'] }}">
-                        <div class="overlay">
-                            <h3>{{ $meal['strMeal'] }}</h3>
-                            <span class="fw-bold">Click below to see Instructions</span>
-                            <span class="text-white"><strong>Category:</strong> {{ $meal['strCategory'] }}</span>
-                            <span class="text-white"><strong>Area:</strong> {{ $meal['strArea'] }}</span>
-                            <a href="{{ route('recipes.show', $meal['idMeal']) }}" class="btn btn-warning btn-sm">View Recipe</a>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
+
+
+        <div class="row justify-content-center" id="recipe-cards">
+            @include('partials.recipes', ['meals' => $meals])
         </div>
 
         <!-- See More Button -->
-        <div class="text-center mt-4">
+        <!-- <div class="text-center mt-4">
             <button id="see-more-btn" class="btn" style="color: white; background-color: #e68900">See More</button>
-        </div>
+        </div> -->
 
     </div>
 </section>
@@ -82,18 +60,60 @@
     document.getElementById('see-more-btn').addEventListener('click', function() {
         var extraRecipes = document.getElementById('extra-recipes');
         var seeMoreBtn = document.getElementById('see-more-btn');
-        
-        console.log('Button clicked'); 
-        
+
+        console.log('Button clicked');
+
         if (extraRecipes.style.display === 'none') {
-            extraRecipes.style.display = 'flex'; 
-            seeMoreBtn.innerText = 'See Less'; 
+            extraRecipes.style.display = 'flex';
+            seeMoreBtn.innerText = 'See Less';
         } else {
-            extraRecipes.style.display = 'none'; 
+            extraRecipes.style.display = 'none';
             seeMoreBtn.innerText = 'See More';
         }
     });
 </script>
+<script>
+    const searchInput = document.querySelector('input[name="search"]');
+    const areaSelect = document.querySelector('select[name="area"]');
+    const recipeCards = document.getElementById('recipe-cards');
+    const loader = document.getElementById('loader');
+
+    let debounceTimer;
+
+    function fetchRecipes() {
+        const query = searchInput.value;
+        const area = areaSelect.value;
+
+        // Show loader, hide cards
+        loader.style.display = 'block';
+        recipeCards.style.display = 'none';
+
+        fetch(`{{ route('recipes.index') }}?search=${encodeURIComponent(query)}&area=${encodeURIComponent(area)}`, {
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(res => res.text())
+            .then(html => {
+                recipeCards.innerHTML = html;
+                recipeCards.style.display = 'flex'; 
+                loader.style.display = 'none';
+            })
+            .catch(() => {
+                loader.innerHTML = "<p class='text-danger'>Something went wrong. Try again.</p>";
+            });
+    }
+
+    searchInput.addEventListener('input', function () {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(fetchRecipes, 500);
+    });
+
+    areaSelect.addEventListener('change', fetchRecipes);
+</script>
+
+
+
 
 @endsection
 

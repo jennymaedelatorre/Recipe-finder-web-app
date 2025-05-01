@@ -32,7 +32,6 @@
 
         .login-container {
             background: rgba(2, 15, 32, 0.9);
-            /* Semi-transparent overlay */
             padding: 30px;
             border-radius: 10px;
             color: white;
@@ -85,6 +84,16 @@
         <h2 class="fw-bold">Recipe Finder</h2>
         <p class="mb-4">Find, Cook & Enjoy Delicious Recipes!</p>
 
+        <!-- Display Error Messages -->
+        @if ($errors->any())
+        <div class="alert alert-danger">
+                @foreach ($errors->all() as $error)
+                <p>{{ $error }}</p>
+                @endforeach
+        </div>
+        @endif
+
+
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
@@ -94,7 +103,7 @@
             <div class="mb-3">
                 <input type="password" name="password" class="form-control" placeholder="Password" required>
             </div>
-            <button type="submit" class="btn btn-login w-100">Login</button>
+            <button type="submit" class="btn btn-login w-100 text-white">Login</button>
         </form>
 
 
