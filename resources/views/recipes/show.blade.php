@@ -3,6 +3,11 @@
 @section('content')
 <section class="py-2">
     <div class="details container">
+
+        <div class="mt-4">
+            <a href="{{ url('/#recipes') }}" class="btn btn-secondary">← Back to Recipes</a>
+        </div>
+
         <h2 class="text-center fw-bold text-white">What’s on the Menu?</h2>
         <p class="text-white text-center mb-5" style="padding-left: 100px; padding-right: 100px">
             Ready to whip up something delicious? Check out all the yummy details below and turn this recipe into your next kitchen adventure!
@@ -56,7 +61,7 @@
         </div>
 
         <div class="mt-4">
-            <a href="{{ url('/#recipes') }}" class="btn btn-secondary">← Back to Recipes</a>
+            <a href="#" class="btn btn-secondary"> Back to top</a>
         </div>
     </div>
 </section>
