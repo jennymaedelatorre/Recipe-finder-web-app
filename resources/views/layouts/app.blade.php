@@ -61,7 +61,6 @@
                             <i class="fas fa-user-circle"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown" id="accountDropdownMenu">
-                            <p id="userId">ID: {{ Auth::user()->id }}</p>
                             <p id="userName">Name: {{ Auth::user()->name }}</p>
                             <p id="userEmail">Email: {{ Auth::user()->email }}</p>
 
